@@ -1,1 +1,1 @@
-rootProject.name = "bnsf-kafka"
+rootProject.name = "spring-boot-kafka-lab"

@@ -1,4 +1,4 @@
-package com.robinsr.bnsfkafka;
+package com.robinsr.kafkalab;
 
 
 import java.util.Map;

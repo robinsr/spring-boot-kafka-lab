@@ -1,4 +1,4 @@
-package com.robinsr.bnsfkafka;
+package com.robinsr.kafkalab;
 
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.boot.SpringApplication;
@@ -8,10 +8,10 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.kafka.config.TopicBuilder;
 
 @SpringBootApplication
-public class JavaRefreshBnsfSpringBootKafkaApplication {
+public class SpringBootKafkaLabApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JavaRefreshBnsfSpringBootKafkaApplication.class, args);
+		SpringApplication.run(SpringBootKafkaLabApplication.class, args);
 	}
 
 	@Bean
