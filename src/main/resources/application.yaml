@@ -1,3 +1,38 @@
 spring:
   application:
-    name: java-refresh-bnsf-spring-boot-kafka
+    name: bnsf-kafka
+
+  profiles:
+    active: default
+
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    # topic:
+    #   name: topic1
+    #   partitions: 1
+    #   replicas: 1
+
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    admin:
+      auto-create: false
+      properties:
+        security.protocol: SASL_SSL
+        sasl.mechanism: PLAIN
+        # sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='...' password='...';"
+
+  metadata:
+    recovery:
+      strategy: none
+
+logging:
+  level:
+    root: info
+    org.apache.kafka: info
+    org.apache.kafka.clients.Metadata: error
