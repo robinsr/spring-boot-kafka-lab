@@ -7,12 +7,6 @@ spring:
 
   kafka:
     bootstrap-servers: localhost:9092
-
-    # topic:
-    #   name: topic1
-    #   partitions: 1
-    #   replicas: 1
-
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
@@ -26,6 +20,12 @@ spring:
         security.protocol: SASL_SSL
         sasl.mechanism: PLAIN
         # sasl.jaas.config: "org.apache.kafka.common.security.plain.PlainLoginModule required username='...' password='...';"
+    # topic:
+    #   name: topic1
+    #   partitions: 1
+    #   replicas: 1
+    streams:
+      application-id: temperature-minute-aggregation
 
   metadata:
     recovery:

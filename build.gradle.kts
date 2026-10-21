@@ -23,6 +23,8 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
 	implementation("com.fasterxml.jackson.core:jackson-databind")
+	implementation("org.apache.kafka:kafka-streams")
+	implementation("org.apache.kafka:kafka-clients")
 
 	developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 	developmentOnly("org.springframework.boot:spring-boot-devtools")

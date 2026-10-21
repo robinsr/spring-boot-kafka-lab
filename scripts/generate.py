@@ -7,7 +7,7 @@ from datetime import datetime, timedelta, timezone
 rng = random.Random(42)
 previous = None
 
-for i in range(1_000):
+for i in range(1_000_000):
     # Every twentieth record repeats the previous event exactly.
     if i > 0 and i % 20 == 0:
         event = previous
@@ -24,10 +24,9 @@ for i in range(1_000):
         }
         previous = event
 
-    # Tab-separated Kafka key and JSON value.
+    # '#'-separated Kafka key and JSON value. Couldn't get tab \t to split on the cli very well
     print(
-        event["deviceId"] + "\t" + json.dumps(event),
+        event["deviceId"] + "#" + json.dumps(event),
         flush=True,
     )
-    # time.sleep(0.1)  # Approximately 10 records/second
-    time.sleep(2.0)  # Approximately 2 records per 2 second
+    time.sleep(0.2)  # 5 records per second
